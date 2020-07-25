@@ -1,1 +1,11 @@
-<p>todo-list works!</p>
+<ul>
+  <li *ngFor="let todo of todos">
+    <div class="todo-container container">
+      <div class="todo-status container center-row-xy">
+        <div class="checkbox">X</div>
+      </div>
+      <div class="todo-text container center-row-y">{{ todo.todo }}</div>
+      <button>Delete</button>
+    </div>
+  </li>
+</ul>

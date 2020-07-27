@@ -13,6 +13,6 @@ export class TodoFormComponent {
 
   submitTodo(): void {
     console.log(this.todoForm.value.todoName);
-    // this.todoFormControl.setValue('');
+    this.todoForm.setValue({ todoName: '' });
   }
 }

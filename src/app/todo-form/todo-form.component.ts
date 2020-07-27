@@ -6,6 +6,10 @@ import { FormControl } from '@angular/forms';
   templateUrl: './todo-form.component.html',
   styleUrls: ['./todo-form.component.css'],
 })
-export class TodoFormComponent implements OnInit {
+export class TodoFormComponent {
   todoFormControl = new FormControl('');
+
+  submitTodo(control: FormControl): void {
+    console.log(control.value);
+  }
 }

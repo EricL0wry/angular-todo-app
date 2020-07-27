@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-form',
@@ -7,10 +7,12 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./todo-form.component.css'],
 })
 export class TodoFormComponent {
-  todoFormControl = new FormControl('');
+  todoForm = new FormGroup({
+    todoName: new FormControl(''),
+  });
 
   submitTodo(): void {
-    console.log(this.todoFormControl.value);
-    this.todoFormControl.setValue('');
+    console.log(this.todoForm.value.todoName);
+    this.todoForm.setValue({ todoName: '' });
   }
 }

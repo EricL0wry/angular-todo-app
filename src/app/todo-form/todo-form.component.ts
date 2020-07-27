@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
-  styleUrls: ['./todo-form.component.css']
+  styleUrls: ['./todo-form.component.css'],
 })
-export class TodoFormComponent implements OnInit {
+export class TodoFormComponent {
+  todoFormControl = new FormControl('');
 
-  constructor() { }
-
-  ngOnInit(): void {
+  submitTodo(): void {
+    console.log(this.todoFormControl.value);
+    this.todoFormControl.setValue('');
   }
-
 }

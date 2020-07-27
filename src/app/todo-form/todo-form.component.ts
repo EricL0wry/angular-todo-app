@@ -9,7 +9,8 @@ import { FormControl } from '@angular/forms';
 export class TodoFormComponent {
   todoFormControl = new FormControl('');
 
-  submitTodo(control: FormControl): void {
-    console.log(control.value);
+  submitTodo(): void {
+    console.log(this.todoFormControl.value);
+    this.todoFormControl.setValue('');
   }
 }

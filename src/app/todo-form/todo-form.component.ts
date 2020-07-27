@@ -7,7 +7,9 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./todo-form.component.css'],
 })
 export class TodoFormComponent {
-  todoFormControl = new FormControl('');
+  todoForm = new FormGroup({
+    todoName: new FormControl(''),
+  });
 
   submitTodo(): void {
     console.log(this.todoFormControl.value);

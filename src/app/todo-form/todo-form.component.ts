@@ -12,7 +12,7 @@ export class TodoFormComponent {
   });
 
   submitTodo(): void {
-    console.log(this.todoFormControl.value);
-    this.todoFormControl.setValue('');
+    console.log(this.todoForm.value.todoName);
+    // this.todoFormControl.setValue('');
   }
 }

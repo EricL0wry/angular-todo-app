@@ -27,11 +27,17 @@ li {
 }
 
 .completed {
-  background-color: seagreen;
+  background-color: darkgray;
 }
 
 .todo-text {
   width: 500px;
   padding-left: 10px;
   margin: 0 10px;
+}
+
+.completed-text {
+  color: darkgray;
+  text-decoration: line-through;
+  font-style: italic;
 }

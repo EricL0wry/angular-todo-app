@@ -1,4 +1,12 @@
 <form [formGroup]="todoForm" (ngSubmit)="submitTodo()">
-  <input type="text" formControlName="todoName" />
-  <button type="submit">Add Todo</button>
+  <input type="text" formControlName="todoName" required />
+  <button type="submit" [disabled]="todoForm.invalid">Add Todo</button>
 </form>
+<div *ngIf="todoName.invalid && (todoName.dirty || todoName.touched)">
+  <div *ngIf="todoName.errors.required">
+    Please enter a new Todo
+  </div>
+  <div *ngIf="todoName.errors.minlength">
+    Todo must be at least three characters long
+  </div>
+</div>

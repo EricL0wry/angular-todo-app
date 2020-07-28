@@ -30,7 +30,16 @@ export class TodoService {
   }
 
   deleteTodo(id: number): void {
-    const index = Todos.findIndex((todo) => todo.id === id);
+    const index = this.findIndex(id);
     Todos.splice(index, 1);
+  }
+
+  toggleStatus(id: number): void {
+    const index = this.findIndex(id);
+    Todos[index].status = Todos[index].status === 'new' ? 'completed' : 'new';
+  }
+
+  private findIndex(id: number): number {
+    return Todos.findIndex((todo) => todo.id === id);
   }
 }

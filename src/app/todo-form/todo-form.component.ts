@@ -21,7 +21,7 @@ export class TodoFormComponent {
     this.todoForm.setValue({ todoName: '' });
   }
 
-  get todoName(): AbstractControl {
+  get todoName(): AbstractControl | null {
     return this.todoForm.get('todoName');
   }
 }

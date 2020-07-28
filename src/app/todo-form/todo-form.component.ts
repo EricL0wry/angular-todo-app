@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-form',
@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class TodoFormComponent {
   todoForm = new FormGroup({
-    todoName: new FormControl(''),
+    todoName: new FormControl('', [Validators.min(1), Validators.required]),
   });
 
   submitTodo(): void {

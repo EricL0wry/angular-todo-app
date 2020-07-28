@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  AbstractControl,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-todo-form',
@@ -14,5 +19,9 @@ export class TodoFormComponent {
   submitTodo(): void {
     console.log(this.todoForm.value.todoName);
     this.todoForm.setValue({ todoName: '' });
+  }
+
+  get todoName(): AbstractControl {
+    return this.todoForm.get('todoName');
   }
 }

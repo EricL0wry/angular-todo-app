@@ -1,11 +1,22 @@
 <ul>
   <li *ngFor="let todo of todos">
     <div class="todo-container container">
-      <div class="todo-status container center-row-xy">
-        <div class="checkbox">X</div>
+      <div
+        class="todo-status container center-row-xy {{ todo.status }}"
+        (click)="toggleStatus(todo.id)"
+      >
+        <div class="checkbox">
+          {{ todo.status === "completed" ? "X" : "O" }}
+        </div>
       </div>
-      <div class="todo-text container center-row-y">{{ todo.todo }}</div>
-      <button>Delete</button>
+      <div
+        class="todo-text container center-row-y {{
+          todo.status === 'completed' ? 'completed-text' : ''
+        }}"
+      >
+        {{ todo.todo }}
+      </div>
+      <button (click)="deleteTodo(todo.id)">Delete</button>
     </div>
   </li>
 </ul>

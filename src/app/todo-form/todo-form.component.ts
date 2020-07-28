@@ -6,6 +6,8 @@ import {
   AbstractControl,
 } from '@angular/forms';
 
+import { TodoService } from '../todo.service';
+
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
@@ -19,12 +21,12 @@ export class TodoFormComponent {
     ]),
   });
 
+  constructor(private todoService: TodoService) {}
+
   submitTodo(): void {
     if (this.todoName.valid) {
-      console.log(this.todoForm.value.todoName);
+      this.todoService.addTodo(this.todoForm.value.todoName);
       this.todoForm.setValue({ todoName: '' });
-    } else {
-      console.log('Please fill out form');
     }
   }
 

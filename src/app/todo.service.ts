@@ -12,4 +12,14 @@ export class TodoService {
   getTodos(): Todo[] {
     return Todos;
   }
+
+  addTodo(todo: string) {
+    const nextId = Todos[Todos.length - 1].id + 1;
+    const newTodo = {
+      id: nextId,
+      status: 'new',
+      todo,
+    };
+    Todos.push(newTodo);
+  }
 }

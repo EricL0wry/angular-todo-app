@@ -31,6 +31,6 @@ export class TodoService {
 
   deleteTodo(id: number): void {
     const index = Todos.findIndex((todo) => todo.id === id);
-    const removed = Todos.splice(index, 1);
+    Todos.splice(index, 1);
   }
 }

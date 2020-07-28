@@ -13,7 +13,7 @@ import {
 })
 export class TodoFormComponent {
   todoForm = new FormGroup({
-    todoName: new FormControl('', [Validators.min(1), Validators.required]),
+    todoName: new FormControl('', [Validators.min(3), Validators.required]),
   });
 
   submitTodo(): void {

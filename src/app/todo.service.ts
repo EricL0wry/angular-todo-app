@@ -14,7 +14,13 @@ export class TodoService {
   }
 
   addTodo(todo: string): void {
-    const nextId = Todos[Todos.length - 1].id + 1;
+    let nextId: number;
+    if (Todos.length >= 1) {
+      nextId = Todos[Todos.length - 1].id + 1;
+    } else {
+      nextId = 1;
+    }
+
     const newTodo = {
       id: nextId,
       status: 'new',
@@ -26,6 +32,5 @@ export class TodoService {
   deleteTodo(id: number): void {
     const index = Todos.findIndex((todo) => todo.id === id);
     const removed = Todos.splice(index, 1);
-    console.log(index, removed);
   }
 }

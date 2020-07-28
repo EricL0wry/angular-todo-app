@@ -13,7 +13,7 @@ export class TodoService {
     return Todos;
   }
 
-  addTodo(todo: string) {
+  addTodo(todo: string): void {
     const nextId = Todos[Todos.length - 1].id + 1;
     const newTodo = {
       id: nextId,

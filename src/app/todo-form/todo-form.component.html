@@ -1,5 +1,5 @@
 <form [formGroup]="todoForm" (ngSubmit)="submitTodo()">
   <input type="text" formControlName="todoName" required />
-  <button type="submit" [disabled]="!todoForm.valid">Add Todo</button>
+  <button type="submit" [disabled]="todoForm.invalid">Add Todo</button>
 </form>
-<p>Form Status: {{ todoForm.valid }}</p>
+<p>Invalid?: {{ todoForm.invalid }}</p>

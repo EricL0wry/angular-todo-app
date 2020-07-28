@@ -13,14 +13,10 @@ export class TodoListComponent implements OnInit {
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
-    this.getTodos;
+    this.getTodos();
   }
 
   getTodos(): void {
     this.todos = this.todoService.getTodos();
   }
-
-  addTodo(todo: string) {
-    this.todoService.addTodo(todo);
-    this.getTodos();
 }

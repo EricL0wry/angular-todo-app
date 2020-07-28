@@ -17,8 +17,12 @@ export class TodoFormComponent {
   });
 
   submitTodo(): void {
-    console.log(this.todoForm.value.todoName);
-    this.todoForm.setValue({ todoName: '' });
+    if (this.todoName.valid) {
+      console.log(this.todoForm.value.todoName);
+      this.todoForm.setValue({ todoName: '' });
+    } else {
+      console.log('Please fill out form');
+    }
   }
 
   get todoName(): AbstractControl | null {
